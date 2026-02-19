@@ -7,16 +7,7 @@ with sync_playwright() as playwright:
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login',
               wait_until='networkidle')
 
-    new_text = 'New Text'
+    registration_link = page.get_by_test_id('login-page-registration-link')
+    registration_link.hover()
 
-    page.evaluate(
-        """
-        (text) => {
-            const title = document.getElementById('authentication-ui-course-title-text');
-            title.textContent = text
-        }
-        """,
-        new_text
-    )
-
-    page.wait_for_timeout(3000)
+    page.wait_for_timeout(4000)
