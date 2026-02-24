@@ -1,4 +1,3 @@
-from urllib import request
 
 from playwright.sync_api import sync_playwright, Request, Response
 
